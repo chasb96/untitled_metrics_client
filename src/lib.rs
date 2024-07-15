@@ -50,7 +50,7 @@ impl MetricsClient {
 impl Default for MetricsClient {
     fn default() -> Self {
         let base_url = env::var("METRICS_BASE_URL")
-            .unwrap_or("http://users".to_string())
+            .unwrap_or("http://metrics".to_string())
             .trim_end_matches('/')
             .to_string();
 
