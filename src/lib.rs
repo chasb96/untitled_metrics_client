@@ -4,9 +4,10 @@ pub mod axum;
 
 use std::env;
 use prost::Message;
-use request::{ViewProjectRequest, ViewUserRequest};
 use reqwest::{header::CONTENT_TYPE, Client};
 
+pub use request::ViewUserRequest;
+pub use request::ViewProjectRequest;
 pub use error::Error;
 
 pub struct MetricsClient {
