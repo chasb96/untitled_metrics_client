@@ -25,7 +25,7 @@ impl MetricsClient {
 
     pub async fn view_user(&self, view_user_request: ViewUserRequest) -> Result<(), Error> {
         self.http_client
-            .get(format!("{}/metrics/users/view", self.base_url))
+            .post(format!("{}/metrics/users/view", self.base_url))
             .header(CONTENT_TYPE, "application/octet-stream")
             .body(view_user_request.encode_to_vec())
             .send()
@@ -37,7 +37,7 @@ impl MetricsClient {
 
     pub async fn view_project(&self, view_project_request: ViewProjectRequest) -> Result<(), Error> {
         self.http_client
-            .get(format!("{}/metrics/projects/view", self.base_url))
+            .post(format!("{}/metrics/projects/view", self.base_url))
             .header(CONTENT_TYPE, "application/octet-stream")
             .body(view_project_request.encode_to_vec())
             .send()
